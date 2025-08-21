@@ -73,3 +73,9 @@ from Customers c join order o on c.CustomersID = o.CategoresID
                          join Productss on p.ProductName = od.ProductID               
 where c.ComepanyName = 'Around the Horn'
 group by p.ProductID, p.ProductName
+
+SELECT o.OederID, FirstName,
+             sum(od.Quantity* od.UnitPrice * (1-discount)) TotalCash
+From Order o join Employees e on o.EmployeeID = e.EmployeeID
+             join [Order DETAILS] od on o.OederID = od.OederID
+group BY o.OederID, FirstName
