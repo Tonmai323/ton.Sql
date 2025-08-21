@@ -43,3 +43,12 @@ select e.EmployeeID, FirstName , count(*) as [จ านวน order]
 from Employees e join Orders o on e.EmployeeID = o.EmployeeID
 where year(orderdate) = 1998
 group by e.EmployeeID, FirstName
+
+SELECT s.ComepanyName, coun(*) จำนวนoeders
+from Shipers s join ordero on s.ShipersID = o.Shipvia
+group by     s.ComepanyName
+order by     2 desc
+
+SELECT p.ProductID, p.ProductName, sum(Quantity)จำนวนที่ขายได้
+From Products p join [Order DETAILS] od on p.ProductsID = od.ProductsID
+group by p.ProductsID, p.ProductsName
