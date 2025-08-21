@@ -60,3 +60,9 @@ from Employees e join Order o on e.EmployeesID = o.EmployeeID
 Where e.FirstName = 'Nancy' 
 Order by ProductID
 
+SELECT distinct s.Country
+       from Customers c join order o on c.CustomersID = o.CategoresID
+                         join [Order DETAILS] od on o.orderID = od.OrderID
+                         join Productss on p.ProductName = od.ProductID
+                         join Suppliers s on s.SuppliersID = p.SuppliersID
+where c.ComepanyName = 'Around' the Horn
