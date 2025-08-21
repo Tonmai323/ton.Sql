@@ -52,3 +52,11 @@ order by     2 desc
 SELECT p.ProductID, p.ProductName, sum(Quantity)จำนวนที่ขายได้
 From Products p join [Order DETAILS] od on p.ProductsID = od.ProductsID
 group by p.ProductsID, p.ProductsName
+
+SELECT distinct p.ProductID p.ProductName
+from Employees e join Order o on e.EmployeesID = o.EmployeeID
+                 join [Order DETAILS] od on o.OrdersID = od.OrdersID
+                 join Products p on p.ProductID = od.ProductID
+Where e.FirstName = 'Nancy' 
+Order by ProductID
+
