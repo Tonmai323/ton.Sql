@@ -65,4 +65,11 @@ SELECT distinct s.Country
                          join [Order DETAILS] od on o.orderID = od.OrderID
                          join Productss on p.ProductName = od.ProductID
                          join Suppliers s on s.SuppliersID = p.SuppliersID
-where c.ComepanyName = 'Around' the Horn
+where c.ComepanyName = 'Around the Horn'
+
+SELECT p.ProductID, p.ProductName, sum(Quantity) จำนวนการชื่อ
+from Customers c join order o on c.CustomersID = o.CategoresID
+                         join [Order DETAILS] od on o.orderID = od.OrderID
+                         join Productss on p.ProductName = od.ProductID               
+where c.ComepanyName = 'Around the Horn'
+group by p.ProductID, p.ProductName
